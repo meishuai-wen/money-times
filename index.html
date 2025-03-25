@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>薪酬激励时钟</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="time-config-display">
+    <span id="workHours">工作时间：00:00 - 00:00</span>
+</div>
+<div class="salary-display">
+            <i class="fas ">💰</i>
+            <span id="accumulated">0.00</span>
+            <span class="currency">¥</span>
+        </div>
+        <div class="salary-rate">
+            <span>时薪：</span>
+            <span id="hourlyRate">0.00</span>
+            <span class="currency">¥/h</span>
+        </div>
+        <div id="timer" class="neon-text">00:00:00.000</div>
+        <div id="countdown" class="neon-text">0%</div>
+        <canvas id="goldRain"></canvas>
+        <div id="treasureBowl" class="treasure-bowl" draggable="true">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTUwIj48cGF0aCBkPSJNMTAgODBDMTAgNDAgNTAgMTAgMTAwIDEwQzE1MCAxMCAxOTAgNDAgMTkwIDgwQzE5MCAxMjAgMTUwIDE0MCAxMDAgMTQwQzUwIDE0MCAxMCAxMjAgMTAgODBaIiBmaWxsPSIjRDRBRjM3IiBzdHJva2U9IiNDMDkwMjAiIHN0cm9rZS13aWR0aD0iNSIvPjxwYXRoIGQ9Ik0zMCA3MEM0MCA0MCA3MCAyNSAxMDAgMjVDMTMwIDI1IDE2MCA0MCAxNzAgNzBDMTcwIDkwIDE0MCAxMTAgMTAwIDExMEM2MCAxMTAgMzAgOTAgMzAgNzBaIiBmaWxsPSIjRkZEMzQwIiBzdHJva2U9IiNDMDkwMjAiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik01MCA2MEM2MCA0MCA4MCAzNSAxMDAgMzVDMTIwIDM1IDE0MCA0MCAxNTAgNjBDMTUwIDgwIDEzMCA5MCAxMDAgOTBDNzAgOTAgNTAgODAgNTAgNjBaIiBmaWxsPSIjRkZFNTgwIi8+PC9zdmc+" alt="聚宝盆">
+        </div>
+    </div>
+
+    <!-- 新增视频容器 -->
+    <div class="video-container left-video">
+      <video autoplay muted loop>
+        <source src="./data/catDance4.mp4" type="video/mp4">
+      </video>
+    </div>
+    <!-- <div class="video-container right-video">
+      <video autoplay muted loop>
+        <source src="./data/catDance.mp4" type="video/mp4">
+      </video>
+    </div> -->
+
+    <!-- 配置弹窗 -->
+    <div id="configModal" class="modal">
+      <div class="modal-content">
+        <form id="configForm">
+          <h2>工作配置</h2>
+          <div class="form-group">
+            <label for="dailySalary">日薪 (¥):</label>
+            <input type="number" id="dailySalary" step="0.01" required>
+          </div>
+          <div class="form-group">
+            <label for="startTime">上班时间:</label>
+            <input type="time" id="startTime" required>
+          </div>
+          <div class="form-group">
+            <label for="endTime">下班时间:</label>
+            <input type="time" id="endTime" required>
+          </div>
+          <div id="errorMsg" class="error-message"></div>
+          <button type="submit">保存配置</button>
+        </form>
+      </div>
+    </div>
+
+        <!-- 下班祝贺弹窗 -->
+    <div id="congratsModal" class="modal congrats-modal">
+      <div class="modal-content">
+        <h2>🎉 下班时间到！</h2>
+        <p>今日工资已到手，关机下班，别浪费公司电！！！</p>
+        <!-- <button onclick="document.getElementById('congratsModal').style.display='none'">关闭</button> -->
+      </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>

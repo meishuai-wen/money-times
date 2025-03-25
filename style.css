@@ -1,0 +1,227 @@
+/* 弹窗样式 */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+.modal-content {
+  position: relative;
+  background: #2c3e50;
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 8px;
+  color: white;
+}
+
+.congrats-modal .modal-content {
+  background: #34495e;
+  border: 2px solid #FFD700;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.form-group {
+  margin: 15px 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  background: #34495e;
+  border: 1px solid #7f8c8d;
+  color: white;
+  border-radius: 4px;
+}
+
+error-message {
+  color: #e74c3c;
+  margin: 10px 0;
+  min-height: 20px;
+}
+
+body {
+    margin: 0;
+    background: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./data/facaishu.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    z-index: -1;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#timer {
+    font-size: 5em;
+    color: #00ff9d;
+    text-shadow: 0 0 10px #00ff9d,
+                 0 0 20px #00ff9d,
+                 0 0 30px #00ff9d;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+#countdown {
+  font-size: 3em;
+  color: #e24949;
+  text-shadow: 0 0 10px #00ff9d,
+               0 0 20px #00ff9d,
+               0 0 30px #00ff9d;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.freedom-text {
+  font-size: 0.6em;
+  color: #00ff15;
+  text-shadow: 0 0 10px #ffcc00,
+               0 0 20px #ffcc00;
+  animation: freedom-pulse 2s ease-in-out infinite;
+}
+
+@keyframes freedom-pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+.salary-display {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffd700;
+    font-size: 2.5em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffd700;
+    font-size: 2.5em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#goldRain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #00ff9d,
+                     0 0 10px #00ff9d;
+    }
+    to {
+        text-shadow: 0 0 15px #00ff9d,
+                     0 0 25px #00ff9d,
+                     0 0 35px #00ff9d;
+    }
+}
+
+/* 新增视频容器样式 */
+.video-container {
+  position: fixed;
+  top: 20%;
+  bottom: 20%;
+  width: 300px;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.left-video {
+  left: 20%;
+}
+
+.right-video {
+  right: 0;
+}
+
+.video-container video {
+  width: 60%;
+  height: 60%;
+  object-fit: cover;
+}
+
+/* 聚宝盆样式 */
+.treasure-bowl {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 80px;
+    cursor: grab;
+    z-index: 10;
+    user-select: none;
+}
+
+.treasure-bowl:active {
+    cursor: grabbing;
+}
+
+.treasure-bowl img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* 得分提示样式 */
+.score-popup {
+    position: absolute;
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 18px;
+    animation: float-up 1s ease-out forwards;
+    pointer-events: none;
+    z-index: 100;
+}
+
+@keyframes float-up {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+}
