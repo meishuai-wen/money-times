@@ -225,3 +225,19 @@ body::before {
         transform: translateY(-30px);
     }
 }
+
+#infoBtn {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 1000;
+  transform: none !important;
+}
+
+#moneySet {
+  position: fixed;
+  right: 80px;
+  top: 20px;
+  z-index: 1000;
+  transform: none !important;
+}

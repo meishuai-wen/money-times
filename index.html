@@ -9,6 +9,9 @@
 </head>
 <body>
     <div class="container">
+        <!-- 信息说明按钮 -->
+        <button id="infoBtn" class="neon-button">说明</button>
+        <button id="moneySet" class="neon-button">设置</button>
         <div class="time-config-display">
     <span id="workHours">工作时间：00:00 - 00:00</span>
 </div>
@@ -41,6 +44,28 @@
         <source src="./data/catDance.mp4" type="video/mp4">
       </video>
     </div> -->
+
+    <!-- 说明弹窗 -->
+    <div id="infoModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>牛马时薪激励</h2>
+          <span class="close" onclick="closeInfoModal()">&times;</span>
+        </div>
+        <div class="modal-body">
+          <h3>项目目的</h3>
+          <p>通过可视化时薪计算和金币动画效果，帮助职场人直观感受工作时间的价值转化，提升个人幸福感用以缓解繁琐复杂的工作造成的心理问题</p>
+          
+          <h3>使用说明</h3>
+          <ol>
+            <li>点击齿轮图标设置日薪和工作时间</li>
+            <li>拖动聚宝盆收集金币获得成就反馈</li>
+            <li>实时查看累计薪资和充能进度</li>
+            <li>下班时间自动触发庆祝动画</li>
+          </ol>
+        </div>
+      </div>
+    </div>
 
     <!-- 配置弹窗 -->
     <div id="configModal" class="modal">

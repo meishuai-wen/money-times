@@ -40,6 +40,23 @@ const salaryElement = document.getElementById('accumulated');
 
 // 工资配置
 
+// 切换信息弹窗显示状态
+function toggleInfoModal(e) {
+  e.preventDefault();
+  const infoModal = document.getElementById('infoModal');
+  infoModal.style.display = infoModal.style.display === 'block' ? 'none' : 'block';
+}
+
+// 绑定信息按钮事件
+document.getElementById('infoBtn').addEventListener('click', toggleInfoModal);
+
+// 绑定设置按钮事件
+document.getElementById('moneySet').addEventListener('click', (e) => {
+  e.preventDefault();
+  salaryDialog();
+});
+
+
 const salaryDialog = () => {
   const modal = document.getElementById('configModal');
   modal.style.display = 'block';
